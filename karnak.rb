@@ -9,7 +9,7 @@ module Karnak
 		get '/' do
 			top_games_url = "https://api.twitch.tv/kraken/games/top?limit=10&offset=0"
 			top_games_hash = HTTParty.get top_games_url
-			@top_ten = top_games_hash["top"].select { |x| x }
+			@top_ten = top_games_hash["top"]
 			erb :index
 		end
 	end
