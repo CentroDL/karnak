@@ -1,6 +1,32 @@
+.header h1, .header ul, .header li{
+  display: inline;
+}
+
+.header-cont{
+}
+
+.header{
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height:50px;
+  background: #000;
+  color: #FFF;
+  margin:0px auto;
+}
+
+body{
+  background-color: #650094;
+}
+.content{
+  padding-top: 50px;
+  width: 960px;
+  margin: 0 auto;
+}
+
 .game{
   background-color: #D4AAED;
-  width: 400px;
+  width: 30%;
   height: 500px;
   display: inline-block;
   vertical-align: top;

@@ -1,0 +1,7 @@
+<h1><%= @game["streams"][0]["game"]%></h1>
+
+<% @game["streams"].each do |stream| %>
+  <h2><%= stream["channel"]["display_name"] %><h2>
+  <h3><%= stream["viewers"]%> Viewers</h3>
+  <img src="<%= stream["preview"]["large"]%>">
+<% end %>

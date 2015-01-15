@@ -1,8 +1,8 @@
-<h1>Top Ten Games on Twitch</h1>
+<h1>Top Games on Twitch</h1>
 
-<% @top_ten.each do |game| %>
+<% @top_games.each do |game| %>
 <div class="game">
-	<h1><%= game["game"]["name"] %><br><%= game["viewers"]%> Viewers</br></h1>
-	<img src="<%= game["game"]["box"]["large"]%>">
+  <h1><%= game["game"]["name"] %><br><%= game["viewers"]%> Viewers</br></h1>
+  <a href="/games/<%= game["game"]["name"] %>"><img src="<%= game["game"]["box"]["large"]%>"></a>
 </div>
 <% end %>
