@@ -2,6 +2,7 @@ module Karnak
   class Server < Sinatra::Base
 
     configure :development do
+      require 'pry'
       register Sinatra::Reloader
       $db = Redis.new
     end

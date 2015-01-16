@@ -9,6 +9,6 @@ gem 'sinatra-contrib'
 gem 'httparty'
 
 
-# group :development do
-#   gem 'pry'
-# end
+group :development do
+  gem 'pry'
+end
