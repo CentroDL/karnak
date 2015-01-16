@@ -14,10 +14,17 @@ module Karnak
     end
 
     get '/games/:name' do
-      game_url = "https://api.twitch.tv/kraken/search/streams?" + URI.encode_www_form({"q" => params[:name]})
+      game_url = "https://api.twitch.tv/kraken/search/streams?" + URI.encode_www_form({
+        "q" => params[:name],
+        "limit" => 12
+        })
       @game = HTTParty.get game_url
       # binding.pry
       erb :game
+    end
+
+    get '/about' do
+      erb :about
     end
 
 

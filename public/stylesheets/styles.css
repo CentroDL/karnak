@@ -2,6 +2,10 @@
   display: inline;
 }
 
+.header a, .header a:visited{
+  text-decoration: none;
+}
+
 .header-cont{
 }
 
@@ -26,7 +30,7 @@ body{
 
 .game{
   background-color: #D4AAED;
-  width: 30%;
+  /*width: 30%;*/
   height: 500px;
   display: inline-block;
   vertical-align: top;
@@ -35,5 +39,6 @@ body{
 }
 
 .game img{
-  height: 300px;
+  /*height: 300px;*/
+  /*width: 100%;*/
 }
