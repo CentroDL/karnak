@@ -6,6 +6,6 @@ require 'httparty'
 require 'uri'
 require 'pry'
 
-require_relative 'karnak'
+require_relative 'server'
 
 run Karnak::Server
