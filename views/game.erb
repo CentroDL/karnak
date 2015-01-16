@@ -1,10 +1,19 @@
 <h1><%= @game["streams"][0]["game"]%></h1>
 
-<% @game["streams"].each do |stream| %>
+<% @game["streams"].take(4).each do |stream| %>
   <div class="game">
   <h2><%= stream["channel"]["display_name"] %><h2>
   <h3><%= stream["viewers"]%> Viewers</h3>
-  <a href="<%= stream["channel"]["url"]%>"><img src="<%= stream["preview"]["large"]%>"></a>
+  <!-- <a href="<%= stream["channel"]["url"]%>"><img src="<%= stream["preview"]["large"]%>"></a> -->
+  <iframe
+src="<%= stream["channel"]["url"]%>/embed"
+frameborder="0"
+scrolling="no"
+height="378"
+width="620">
+</iframe>
+<a href="<%= stream["channel"]["url"] %>?tt_medium=live_embed&tt_content=text_link" class="steam-link">Watch live video from <%= stream["channel"]["display_name"] %> on www.twitch.tv</a>
+
 </div>
 <% end %>
 

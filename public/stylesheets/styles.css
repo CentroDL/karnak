@@ -42,3 +42,12 @@ body{
   /*height: 300px;*/
   /*width: 100%;*/
 }
+
+.stream-link{
+  padding:2px 0px 4px;
+  display:block;
+  width:345px;
+  font-weight:normal;
+  font-size:10px;
+  text-decoration:underline;
+}
