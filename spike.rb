@@ -4,7 +4,7 @@ require 'sinatra/contrib'
 require 'sinatra/reloader'
 require 'httparty'
 require 'uri'
-require 'pry'
+# require 'pry'
 
 require_relative 'hitbox_helper'
 require_relative 'twitch_helper'

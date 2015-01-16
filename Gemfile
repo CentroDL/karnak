@@ -1,5 +1,6 @@
 # A sample Gemfile
 source "https://rubygems.org"
+ruby "2.1.2p95"
 
 # gem "rails"
 gem 'redis'
