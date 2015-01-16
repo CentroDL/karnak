@@ -14,12 +14,21 @@ module Karnak
     end
 
     get '/games/:name' do
-      game_url = "https://api.twitch.tv/kraken/search/streams?" + URI.encode_www_form({
-        "q" => params[:name],
-        "limit" => 12
-        })
-      @game = HTTParty.get game_url
+      @game = params[:name]
+
+      @twitch_streams = TwitchHelper.streams @game
+      @hitbox_streams = HitboxHelper.streams @game
+
+      # merge all network feeds
+      @streams = @twitch_streams | @hitbox_streams
+
+      limit = params[:limit] || 6
+      start = params[:start] || 0
+
       # binding.pry
+
+      @streams = @streams[(start.to_i)..-1].take(limit.to_i)
+
       erb :game
     end
 
