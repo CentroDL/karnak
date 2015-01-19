@@ -29,13 +29,14 @@ body{
 }
 
 .game{
-  background-color: #D4AAED;
+  /*background-color: #D4AAED;*/
   /*width: 30%;*/
-  height: 500px;
+  /*height: 500px;*/
   display: inline-block;
   vertical-align: top;
-  margin-bottom: 15px;
+  margin: 15px;
   text-align: center;
+  border: solid 1px black;
 }
 
 .game img{

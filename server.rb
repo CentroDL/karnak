@@ -15,22 +15,16 @@ module Karnak
     end
 
     get '/games/:name' do
+      #get network feeds
       @game = params[:name]
-
       @twitch_streams = TwitchHelper.streams @game
       @hitbox_streams = HitboxHelper.streams @game
-
       # merge all network feeds
       @streams = @twitch_streams | @hitbox_streams
-
       limit = params[:limit] || 6
       start = params[:start] || 0
-
-      # binding.pry
-
       @streams = @streams[(start.to_i)..-1].take(limit.to_i)
-
-      erb :game
+      erb :games
     end
 
     get '/about' do

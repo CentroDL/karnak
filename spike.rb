@@ -12,4 +12,5 @@ require_relative 'server'
 
 include HitboxHelper
 include TwitchHelper
+binding.pry
 
