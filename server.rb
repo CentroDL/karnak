@@ -21,7 +21,7 @@ module Karnak
       @hitbox_streams = HitboxHelper.streams @game
       # merge all network feeds
       @streams = @twitch_streams | @hitbox_streams
-      limit = params[:limit] || 6
+      limit = params[:limit] || 20
       start = params[:start] || 0
       @streams = @streams[(start.to_i)..-1].take(limit.to_i)
       erb :games

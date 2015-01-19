@@ -1,14 +1,19 @@
-<h1><%= @game %></h1>
+<div class="results">
+<h1>Results for <span style="color: #A967C7;">'<%= @game %>'</span></h1>
 
 <% @streams.each do |stream| %>
-  <div class="game" style="background-image: url(<%=stream[:channel_thumb]%>);">
-    <!-- <h2><%#= stream[:stream_name]%></h2> -->
-    <h3>Streamer: <%= stream[:streamer_name] %><h3>
-    <h2><%= stream[:game]%></h2>
-    <img src="<%=stream[:streamer_logo]%>" width=50px>
-    <h3>Channel Name: <%= stream[:channel_name]%></h3>
-    <h3>Network: <%= stream[:network]%></h3>
-    <h3><%= stream[:viewer_count]%> Viewers</h3>
+<div class="game <%= stream[:network] %>"
+  style="background: url(<%=stream[:channel_thumb]%>)
+         no-repeat;">
+  <div class="overlay">
+    <header class="streamer-info">
+      <img class="logo" src="<%=stream[:streamer_logo]%>">
+      <p><%= stream[:streamer_name] %></p>
+    </header>
+    <p class="game-name"><%= stream[:game]%></p>
+    <p class="channel-name"><%= stream[:channel_name]%></p>
+    <p class="viewer-count"><%= stream[:viewer_count]%> Viewers</p>
+
     <!-- <img src="<%#=stream[:channel_thumb]%>"> -->
 <!--     <iframe
        src="<%#= stream[:channel_embed_url]%>"
@@ -18,6 +23,7 @@
        width="<%#= stream[:embed_width]%>">
     </iframe> -->
   </div>
+</div>
 <% end %>
 
 <!-- TODO
@@ -25,3 +31,4 @@
   change font and styling
   figure out a good tiling connfiguration
 -->
+</div>

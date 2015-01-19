@@ -6,11 +6,15 @@ a, a:hover, a:visited{
   text-decoration: none;
 }
 
+li{
+  list-style-type: none;
+}
 
 .header-cont{
 }
 
 .header{
+  z-index: 5;
   position: fixed;
   top: 0px;
   width: 100%;
@@ -27,22 +31,59 @@ body{
 
 .content{
   padding-top: 50px;
-  width: 960px;
+  width: 1130px;
   margin: 0 auto;
 }
 
 .game{
-  /*background-color: #D4AAED;*/
-  /*width: 30%;*/
-  /*height: 500px;*/
+  width: 320px;
+  height: 180px;
   display: inline-block;
   vertical-align: top;
   margin: 15px;
   text-align: center;
-  border: solid 1px black;
   color: white;
+  position: relative;
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
 }
 
+.overlay{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.logo{
+  width: 48px;
+  border-radius: 24px;
+  border: 1px solid gray;
+}
+
+.streamer-info{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 5px 0px 0px 5px;
+}
+
+.streamer-info p{
+  font-size: 1.5em;
+  vertical-align: top;
+  display: inline;
+}
+
+.results{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.overlay:hover{
+  background: linear-gradient(  rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6));
+
+}
 .search{
   background: rgba(0,0,0, 0.3);
   width: 800px;
@@ -88,13 +129,11 @@ body{
   color: #A967C7;
 }
 
-.twitch{
+.twitch-feed{
   width: 900px;
   margin: 0 auto;
   text-align: center;
 }
-
-
 
 #search-butt{
   /* :P */
@@ -102,3 +141,32 @@ body{
   border: none;
   border-radius: 3px;
 }
+
+.twitch{
+  color: #D8C2FF;
+}
+
+.hitbox{
+  color: #BCE9AE;
+}
+
+.game-name{
+  position: absolute;
+  top: 8%;
+  left: 19%;
+}
+.channel-name{
+  padding-top: 70px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.viewer-count{
+  position: absolute;
+  bottom:0px;
+  right: 0px;
+  margin-right: 5px;
+}
+
+
