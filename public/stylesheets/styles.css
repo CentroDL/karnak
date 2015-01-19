@@ -1,10 +1,11 @@
 .header h1, .header ul, .header li{
   display: inline;
 }
-
-.header a, .header a:visited{
+a, a:hover, a:visited{
+  color: white;
   text-decoration: none;
 }
+
 
 .header-cont{
 }
@@ -20,8 +21,10 @@
 }
 
 body{
-  background-color: #650094;
+  font-family: "Arimo", "Arial", sans-serif;
+  font-weight: 400;
 }
+
 .content{
   padding-top: 50px;
   width: 960px;
@@ -40,9 +43,25 @@ body{
   color: white;
 }
 
-.game img{
-  /*height: 300px;*/
-  /*width: 100%;*/
+.search{
+  background: rgba(0,0,0, 0.3);
+  width: 800px;
+  margin: 0 auto;
+  border-radius: 15px;
+  color: white;
+  padding: 20px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.search form{
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.search input{
+  color: black;
 }
 
 .stream-link{
@@ -52,4 +71,34 @@ body{
   font-weight:normal;
   font-size:10px;
   text-decoration:underline;
+}
+
+.top{
+  width: 272px;
+  height: 379px;
+  display: inline-block;
+  vertical-align: top;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(150, 150, 150, 0.5);
+  margin: 5px;
+  border-radius: 3px;
+}
+
+.top:hover{
+  color: #A967C7;
+}
+
+.twitch{
+  width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+
+#search-butt{
+  /* :P */
+  background: #A967C7;
+  border: none;
+  border-radius: 3px;
 }

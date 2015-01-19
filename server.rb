@@ -31,6 +31,10 @@ module Karnak
       erb :about
     end
 
+    post '/games' do
+      redirect "/games/#{params[:game]}"
+    end
+
 
   end#Server
 end#Karnak
