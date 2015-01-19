@@ -1,7 +1,7 @@
 <h1><%= @game %></h1>
 
 <% @streams.each do |stream| %>
-  <div class="game">
+  <div class="game" style="background-image: url(<%=stream[:channel_thumb]%>);">
     <!-- <h2><%#= stream[:stream_name]%></h2> -->
     <h3>Streamer: <%= stream[:streamer_name] %><h3>
     <h2><%= stream[:game]%></h2>
@@ -9,7 +9,7 @@
     <h3>Channel Name: <%= stream[:channel_name]%></h3>
     <h3>Network: <%= stream[:network]%></h3>
     <h3><%= stream[:viewer_count]%> Viewers</h3>
-    <img src="<%=stream[:channel_thumb]%>">
+    <!-- <img src="<%#=stream[:channel_thumb]%>"> -->
 <!--     <iframe
        src="<%#= stream[:channel_embed_url]%>"
        frameborder="0"
