@@ -13,12 +13,9 @@ module TwitchHelper
       network:      "twitch",
       game:         stream_data["game"],
       viewer_count: stream_data["viewers"],
-      embed_height: 378,
-      embed_width:  620,
       channel_name: stream_data["channel"]["status"],
       channel_thumb: stream_data["preview"]["medium"],#consider template wxh
-      channel_embed_url: "#{stream_data["channel"]["url"]}/embed",
-      streamer_name: stream_data["channel"]["display_name"],
+      streamer_name: stream_data["channel"]["display_name"],#used to get stream
       streamer_logo: stream_data["channel"]["logo"]
     }
   end
@@ -26,5 +23,14 @@ module TwitchHelper
   def self.streams(game)
     streams_data = get_streams_api(game)["streams"]
     streams_data.map {|stream_data| stream_hash(game, stream_data)}
+  end
+
+  def self.get_stream(user)
+    data = HTTParty.get "https://api.twitch.tv/kraken/streams/#{user}"
+    {
+      channel_embed_url: "#{data["stream"]["channel"]["url"]}/embed",
+      embed_height: 378,
+      embed_width:  620
+    }
   end
 end

@@ -3,32 +3,23 @@
 
 <% @streams.each do |stream| %>
 <div class="game <%= stream[:network] %>"
-  style="background: url(<%=stream[:channel_thumb]%>)
-         no-repeat;">
-  <div class="overlay">
+  style="background: url(<%=stream[:channel_thumb]%>) no-repeat;">
+<a href="/stream/<%= stream[:network] %>/<%= stream[:streamer_name] %>">
+<div class="overlay <%= stream[:network] %>">
+
     <header class="streamer-info">
       <img class="logo" src="<%=stream[:streamer_logo]%>">
       <p><%= stream[:streamer_name] %></p>
     </header>
+
     <p class="game-name"><%= stream[:game]%></p>
     <p class="channel-name"><%= stream[:channel_name]%></p>
     <p class="viewer-count"><%= stream[:viewer_count]%> Viewers</p>
 
-    <!-- <img src="<%#=stream[:channel_thumb]%>"> -->
-<!--     <iframe
-       src="<%#= stream[:channel_embed_url]%>"
-       frameborder="0"
-       scrolling="no"
-       height="<%#= stream[:embed_height]%>"
-       width="<%#= stream[:embed_width]%>">
-    </iframe> -->
-  </div>
 </div>
+</a>
+</div>
+
 <% end %>
 
-<!-- TODO
-  make image thumbnail into div background
-  change font and styling
-  figure out a good tiling connfiguration
--->
 </div>

@@ -1,6 +1,15 @@
 .header h1, .header ul, .header li{
   display: inline;
 }
+
+.header h1{
+  margin-left: 200px;
+}
+
+.header ul{
+  margin-left: 600px;
+}
+
 a, a:hover, a:visited{
   color: white;
   text-decoration: none;
@@ -14,6 +23,7 @@ li{
 }
 
 .header{
+  padding-top: 10px;
   z-index: 5;
   position: fixed;
   top: 0px;
@@ -82,8 +92,8 @@ body{
 .overlay:hover{
   background: linear-gradient(  rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.6));
-
 }
+
 .search{
   background: rgba(0,0,0, 0.3);
   width: 800px;
@@ -168,5 +178,13 @@ body{
   right: 0px;
   margin-right: 5px;
 }
+
+.stream{
+  padding-top: 50px;
+  width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 
 
