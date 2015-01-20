@@ -4,4 +4,4 @@
 
 A Twitch.tv dashboard where you can view your subscribed streams all in one place like some cheesy super villain.
 
-Check it out live on [Heroku](https://salty-spire-4552.herokuapp.com/)
+Check it out live on [Heroku](http://salty-spire-4552.herokuapp.com/)
