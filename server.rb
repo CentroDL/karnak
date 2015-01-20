@@ -32,7 +32,7 @@ module Karnak
     end
 
     post '/games' do
-      redirect "/games/#{params[:game]}"
+      redirect "/games/#{params[:game].to_s.gsub(' ', '%20')}"
     end
 
 
