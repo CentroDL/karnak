@@ -6,13 +6,13 @@ module HitboxHelper
 
   def self.stream_hash(game, stream_data)
     {
-      network: "hitbox",
-      game:    stream_data["category_name"],
-      viewer_count: stream_data["category_viewers"],
-      channel_name: stream_data["media_status"],
-      channel_thumb: "http://edge.sf.hitbox.tv#{stream_data["media_thumbnail"]}",
-      streamer_name: stream_data["channel"]["user_name"],
-      streamer_logo: "http://edge.sf.hitbox.tv#{stream_data["channel"]["user_logo"]}"
+      network:        "hitbox",
+      game:           stream_data["category_name"],
+      viewer_count:   stream_data["category_viewers"],
+      channel_name:   stream_data["media_status"],
+      channel_thumb:  "http://edge.sf.hitbox.tv#{stream_data["media_thumbnail"]}",
+      streamer_name:  stream_data["channel"]["user_name"],
+      streamer_logo:  "http://edge.sf.hitbox.tv#{stream_data["channel"]["user_logo"]}"
     }
   end
 
