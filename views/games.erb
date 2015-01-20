@@ -1,21 +1,18 @@
 <div class="results">
+
 <h1>Results for <span style="color: #A967C7;">'<%= @game %>'</span></h1>
 
 <% @streams.each do |stream| %>
-<div class="game <%= stream[:network] %>"
-  style="background: url(<%=stream[:channel_thumb]%>) no-repeat;">
+<div class="game <%= stream[:network] %>" style="background: url(<%=stream[:channel_thumb]%>) no-repeat;">
 <a href="/stream/<%= stream[:network] %>/<%= stream[:streamer_name] %>">
 <div class="overlay <%= stream[:network] %>">
-
-    <header class="streamer-info">
-      <img class="logo" src="<%=stream[:streamer_logo]%>">
-      <p><%= stream[:streamer_name] %></p>
-    </header>
-
-    <p class="game-name"><%= stream[:game]%></p>
-    <p class="channel-name"><%= stream[:channel_name]%></p>
-    <p class="viewer-count"><%= stream[:viewer_count]%> Viewers</p>
-
+  <header class="streamer-info">
+    <img class="logo" src="<%=stream[:streamer_logo]%>">
+    <p><%= stream[:streamer_name] %></p>
+  </header>
+  <p class="game-name"><%= stream[:game]%></p>
+  <p class="channel-name"><%= stream[:channel_name]%></p>
+  <p class="viewer-count"><%= stream[:viewer_count]%> Viewers</p>
 </div>
 </a>
 </div>

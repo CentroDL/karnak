@@ -23,11 +23,12 @@ module HitboxHelper
 
   def self.get_stream(user)
     data = JSON.parse HTTParty.get "http://api.hitbox.tv/media"
-    target_data= data["livestream"].select {|x| x["channel"]["user_name"]== user}
+    target_data= data["livestream"].select { |x| x["channel"]["user_name"] == user }
+
     {
       channel_embed_url: "http://hitbox.tv/#!/embed/#{target_data[0]["channel"]["user_name"]}",
-      embed_height: 368,
-      embed_width:  640
+      embed_height:      368,
+      embed_width:       640
     }
   end
 end
