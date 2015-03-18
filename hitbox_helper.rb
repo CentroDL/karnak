@@ -8,7 +8,7 @@ module HitboxHelper
     {
       network:        "hitbox",
       game:           stream_data["category_name"],
-      viewer_count:   stream_data["category_viewers"],
+      viewer_count:   stream_data["media_views"],
       channel_name:   stream_data["media_status"],
       channel_thumb:  "http://edge.sf.hitbox.tv#{stream_data["media_thumbnail"]}",
       streamer_name:  stream_data["channel"]["user_name"],
