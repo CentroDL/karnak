@@ -6,6 +6,7 @@ ruby "2.1.2"
 gem 'redis'
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'sinatra-flash'
 gem 'httparty'
 
 
