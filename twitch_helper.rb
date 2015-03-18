@@ -19,7 +19,11 @@ module TwitchHelper
 
   def self.streams(game)
     streams_data = get_streams_api(game)["streams"]
-    streams_data.map { |stream_data| stream_hash(game, stream_data) } | []
+    if streams_data
+      streams_data.map { |stream_data| stream_hash(game, stream_data) }
+    else
+      []
+    end
   end
 
   def self.get_stream(user)
