@@ -1,8 +1,6 @@
 module Karnak
   class Server < Sinatra::Base
 
-    $twitch_error = false
-
     configure :development do
       require 'pry'
       register Sinatra::Reloader
