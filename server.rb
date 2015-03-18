@@ -7,6 +7,9 @@ module Karnak
       $db = Redis.new
     end
 
+    enable :sessions
+    register Sinatra::Flash
+
     get '/' do
       top_games_url  = "https://api.twitch.tv/kraken/games/top?limit=12"
       top_games_hash = HTTParty.get top_games_url
@@ -20,6 +23,11 @@ module Karnak
 
       @twitch_streams = TwitchHelper.streams @game
       @hitbox_streams = HitboxHelper.streams @game
+
+      if @twitch_streams.class == "Hash"
+        flash.now[:error] = "Twitch may be having issues at the moment. #{ @twitch_streams }"
+        @twitch_streams = [] # this makes the stream merge below work
+      end
 
       # merge all network feeds
       @streams = @twitch_streams | @hitbox_streams
@@ -40,6 +48,9 @@ module Karnak
 
     get '/stream/twitch/:id' do
       @stream = TwitchHelper.get_stream(params[:id])
+      if @stream.has_key? 'error'
+        flash.now[:error] = "Error from Twitch: \n #{ @stream }"
+      end
       erb :stream
     end
 

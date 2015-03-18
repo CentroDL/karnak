@@ -2,6 +2,10 @@
 
 <h1>Results for <span style="color: #A967C7;">'<%= @game %>'</span></h1>
 
+<% if flash[:error] %>
+  <div style="color: red;"><%= flash[:error] %></div>
+<% end %>
+
 <% @streams.each do |stream| %>
 <div class="game <%= stream[:network] %>" style="background: url(<%=stream[:channel_thumb]%>) no-repeat;">
 <a href="/stream/<%= stream[:network] %>/<%= stream[:streamer_name] %>">

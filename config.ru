@@ -2,6 +2,7 @@ require 'redis'
 require 'sinatra/base'
 require 'sinatra/contrib'
 require 'sinatra/reloader'
+require 'sinatra/flash'
 require 'httparty'
 require 'uri'
 

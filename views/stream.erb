@@ -1,4 +1,9 @@
 <div class="stream">
+
+  <% if flash[:error] %>
+  <div style="color: red;"><%= flash[:error] %></div>
+  <% end %>
+
   <iframe
        src="<%= @stream[:channel_embed_url] %>"
        frameborder="0"

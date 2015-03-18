@@ -18,20 +18,25 @@ module TwitchHelper
   end
 
   def self.streams(game)
-    streams_data = get_streams_api(game)["streams"]
-    if streams_data
-      streams_data.map { |stream_data| stream_hash(game, stream_data) }
+
+    streams_data = get_streams_api(game)
+    if streams_data.has_key? 'streams'
+      streams_data['streams'].map { |stream_data| stream_hash(game, stream_data) }
     else
-      []
+      streams_data #if there's an error it'll return the error hash
     end
   end
 
   def self.get_stream(user)
     data = HTTParty.get "https://api.twitch.tv/kraken/streams/#{user}"
-    {
-      channel_embed_url: "#{data["stream"]["channel"]["url"]}/embed",
-      embed_height:      378,
-      embed_width:       620
-    }
+    if data.has_key? 'error'
+      data
+    else
+      {
+        channel_embed_url: "#{data["stream"]["channel"]["url"]}/embed",
+        embed_height:      378,
+        embed_width:       620
+      }
+    end
   end
 end
