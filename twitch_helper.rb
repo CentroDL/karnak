@@ -20,6 +20,7 @@ module TwitchHelper
   def self.streams(game)
 
     streams_data = get_streams_api(game)
+
     if streams_data.has_key? 'streams'
       streams_data['streams'].map { |stream_data| stream_hash(game, stream_data) }
     else
@@ -30,7 +31,7 @@ module TwitchHelper
   def self.get_stream(user)
     data = HTTParty.get "https://api.twitch.tv/kraken/streams/#{user}"
     if data.has_key? 'error'
-      data
+      data  # gives the error hash back to the view to be displayed, can't do it here
     else
       {
         channel_embed_url: "#{data["stream"]["channel"]["url"]}/embed",

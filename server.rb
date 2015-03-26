@@ -24,7 +24,7 @@ module Karnak
       @twitch_streams = TwitchHelper.streams @game
       @hitbox_streams = HitboxHelper.streams @game
 
-      if @twitch_streams.class == "Hash"
+      if @twitch_streams.class == "Hash" #twitch gives you back a hash on error
         flash.now[:error] = "Twitch may be having issues at the moment. #{ @twitch_streams }"
         @twitch_streams = [] # this makes the stream merge below work
       end
