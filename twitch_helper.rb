@@ -1,4 +1,5 @@
 module TwitchHelper
+
   def self.get_streams_api(game)
     media = "https://api.twitch.tv/kraken/search/streams?" +
             (URI.encode_www_form "q" => game)
