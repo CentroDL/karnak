@@ -4,16 +4,16 @@ module Karnak
     configure :development do
       require 'pry'
       register Sinatra::Reloader
-      $db = Redis.new
+      # $db = Redis.new
     end
 
     enable :sessions
     register Sinatra::Flash
 
     get '/' do
-      top_games_url  = "https://api.twitch.tv/kraken/games/top?limit=12"
-      top_games_hash = HTTParty.get top_games_url
-      @top_games     = top_games_hash["top"]
+      # top_games_url  = "https://api.twitch.tv/kraken/games/top?limit=12"
+      # top_games_hash = HTTParty.get top_games_url
+      # @top_games     = top_games_hash["top"]
       erb :index
     end
 
@@ -24,7 +24,7 @@ module Karnak
       @twitch_streams = TwitchHelper.streams @game
       @hitbox_streams = HitboxHelper.streams @game
 
-      if @twitch_streams.class == "Hash" #twitch gives you back a hash on error
+      if @twitch_streams.has_key? "error" #twitch gives you back a hash on error
         flash.now[:error] = "Twitch may be having issues at the moment. #{ @twitch_streams }"
         @twitch_streams = [] # this makes the stream merge below work
       end

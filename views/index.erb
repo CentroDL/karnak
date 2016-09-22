@@ -11,6 +11,7 @@
 <div class="twitch-feed">
 <h1>Top Games on Twitch</h1>
 
+<% if @top_games %>
 <% @top_games.each do |game| %>
   <a href="/games/<%= game["game"]["name"] %>">
     <div class="top" style="background-image: url(<%= game["game"]["box"]["large"] %>);">
@@ -18,5 +19,5 @@
     </div>
   </a>
 <% end %>
-
+<% end %>
 </div>

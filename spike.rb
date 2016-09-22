@@ -1,4 +1,4 @@
-require 'redis'
+# require 'redis'
 require 'sinatra/base'
 require 'sinatra/contrib'
 require 'sinatra/flash'
